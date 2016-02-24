@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>D3 is awesome</title>
+	<!-- Always include D3 first. -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<!-- Include main.js, which is where all our code lives -->
+	<script src="hw2.js"></script>
+	<!-- Include any styles we want to add to our page -->
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h1>Filtering and Animation</h1>
+	<input id = "GPAFilter" placeholder = "Filter by GPA" type = "number"></input>
+	<select id = "department">
+		<option value="">Filter By Department</option>
+		<option value="CHEM">CHEM</option>
+		<option value="CS">CS</option> 
+		<option value="ENGL">ENGL</option>
+		<option value="HTS">HTS</option>
+		<option value="MATH">MATH</option>
+		<option value="MGT">MGT</option>
+		<option value="PHYS">PHYS</option>
+		<option value="PSYC">PSYC</option>
+  <!-- and so on... -->   
+ 	 </select>
+	<!-- Our graph will be added inside this divider element -->
+	<div id="graph"></div>
+</body>
+</html>
