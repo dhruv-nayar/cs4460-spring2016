@@ -16,6 +16,20 @@ function start(){
 		.text('Filter Data')
 		.on('click', function(){
 			bars.selectAll('.bar')
+			.transition()
+			.duration(function(d){
+				return 300;
+			})
+			.delay(function(d){
+				return 50;
+			})
+			.attr('y', function(d){
+				return height - yScale(d.GPA) - 50; 
+			})
+			.attr('height', function(d){
+				return yScale(d.GPA);
+			})
+			.style('fill', '#3186AD')
 			.filter(function(d){
 
 				if (gpaFilter.value == ""){
@@ -45,9 +59,6 @@ function start(){
 			.transition()
 			.duration(function(d){
 				return 1000;
-			})
-			.delay(function(d){
-				return 100;
 			})
 			.style('fill', 'red')
 			.attr('y', function(d){
@@ -101,6 +112,7 @@ function start(){
 			.enter()
 			.append('rect')
 			.attr('class', 'bar')
+			.style('fill', '#3186AD')
 			.attr('y', function(d){
 				return height - yScale(d.GPA) - 50;
 			})
@@ -112,13 +124,6 @@ function start(){
 			})
 			.attr('height', function(d){
 				return yScale(d.GPA);
-			})
-			.append("text")
-				.attr("class", "xText")
-				.attr("x", xAxis.rangeBand() / 2)
-                .attr("y", height - y_translate + 5)
-				.text(function(d){
-				return d['Department'] +" "+d['Course Number'];
 			});
 
 	});
