@@ -125,7 +125,6 @@ function start(){
 			.attr('height', function(d){
 				return yScale(d.GPA);
 			});
-
 	});
 	
 
